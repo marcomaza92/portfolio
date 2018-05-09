@@ -1,0 +1,36 @@
+// Variables
+
+// Shades and Tints
+
+// Trigger
+$step: 0;
+// $gap * $count must be an integer between 0 and 100
+// Both $gap and $count must be integers
+$gap: 5;
+$count: 5;
+// Check if you pay attention to the above conditions
+@if $gap * $count >= 0 or $gap * $count <= 100 {
+  $gap: $gap;
+  $count: $count;
+} @else {
+  @error 'Out of range: $gap * $count must be an integer between 0 and 100';
+}
+// Empty maps for the shades and tints
+$shades: ();
+$tints: ();
+
+// Fonts
+
+// Usually 1rem = 16px in most of the browsers according to the UA stylesheet. However this can be changed by the user in theirs browsers options.
+$base: 1rem;
+// Below arrays are for you to feel with your needs
+$font-names: 'h6', 'h5', 'base', 'h3', 'h2', 'h1';
+$font-sizes: 0.75, 0.875, 1, 1.5, 2, 2.5;
+// Empty map for the fonts
+$fonts: ();
+
+// Paddings, Margins and Positions
+
+$padding: 20px;
+$margin: 20px;
+$position: 20px;

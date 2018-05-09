@@ -1,0 +1,17 @@
+// Get the lengths of boths arrays
+$font-names-length: length($font-names);
+$font-sizes-length: length($font-sizes);
+// Check if the length are equal
+@if $font-names-length == $font-sizes-length {
+  // Loop the map with the font-names length
+  @for $i from 1 through $font-names-length {
+    $current-name: nth($font-names, $i);
+    $current-size: nth($font-sizes, $i);
+    $font-temp: (
+      font-#{$current-name}: $base * $current-size
+    );
+    $fonts: map-merge($fonts, $font-temp);
+  }
+} @else {
+  @error 'Lengths from $font-names and $font-sizes are not equal. They must be the same';
+}

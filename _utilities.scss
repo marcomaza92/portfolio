@@ -1,0 +1,23 @@
+// Utils
+
+// Get values recursively inside a map
+// @param {Map, Map...} $map, $keys
+// @return {Map} $map
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+// Compute the maximum depth of a map
+// @param {Map} $map
+// @return {Number} max depth of `$map`
+@function depth($map) {
+  $level: 1;
+  @each $key, $value in $map {
+    @if type-of($value) == "map" {
+      $level: max(depth($value) + 1, $level);
+    }
+  }
+  @return $level;
+}

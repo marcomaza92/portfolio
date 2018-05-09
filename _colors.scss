@@ -1,0 +1,62 @@
+// Colors
+
+// Definition
+
+// Map with the colors of your choice.
+// Chromatic shold be left as is.
+// Main can be empty (i.e.: Chromatic colors == Main colors).
+$colors: (
+  // Chromatic
+  black: #000000,
+  white: #FFFFFF,
+  // Main
+  purple: #3D0046,
+  yellow: #D97F11,
+  turquoise: #168C8C,
+  green: #09470B
+);
+
+// Shades and Tints
+
+@function createShadesAndTints($color-name, $color-value) {
+  $shade: ();
+  $tint: ();
+  @for $i from 1 through $count {
+    // Fine Tune
+    $step: $step + $gap;
+    // Create shade
+    $temp-shade: (
+      #{$color-name}-shade-#{$i}: darken($color-value, $step)
+    );
+    $shade: map-merge($shade, $temp-shade);
+    // Create tint
+    $temp-tint: (
+      #{$color-name}-tint-#{$i}: lighten($color-value, $step)
+    );
+    $tint: map-merge($tint, $temp-tint);
+  }
+  // Return a list so we can do everything in one function
+  @return $shade, $tint;
+}
+// Iterate all the colors
+@each $color-name, $color-value in $colors {
+  $current-temp-shade: ();
+  $current-temp-tint: ();
+  // Call the function
+  $current-result: createShadesAndTints($color-name, $color-value);
+  // Parse the result from the function
+  $current-shade: nth($current-result, 1);
+  $current-tint: nth($current-result, 2);
+  // Add shade to its sub-map
+  $current-temp-shade: (
+    #{$color-name}-shades: $current-shade
+  );
+  // Add tint to its sub-map
+  $current-temp-tint: (
+    #{$color-name}-tints: $current-tint
+  );
+  // Add shade to its main-map
+  $shades: map-merge($shades, $current-temp-shade);
+  // Add tint to its main-map
+  $tints: map-merge($tints, $current-temp-tint);
+}
