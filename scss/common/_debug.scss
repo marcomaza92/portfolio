@@ -1,106 +1,103 @@
 // Debug
 
-@function debugger($thing) {
-  $line-break: "\A";
-  $comma: ",";
-  $space: " ";
-  $tab: "  "; // Tab = Space * 2
-  $start: "Debugger says: ";
-  $end: "EOF";
+// Variables for formatting
+$line-break: "\A";
+$comma: ",";
+$colon: ":";
+$space: " ";
+$tab: "  "; // Tab = Space * 2
+$pipe: "|";
+$dash: "-";
+$parenthesis-open: "(";
+$parenthesis-close: ")";
+$start: "====================  SCSS Debugger  ====================";
+$hi: "Debugger says:";
+$end: "====================  End of SCSS Debugger  ====================";
 
-  @if (length($thing) == 0) {
-    $content: "Content: " + inspect($thing);
-    $type: "Type: " + type-of($thing);
-    $depth: "Depth: " + depth($thing);
-    $length: "Length: " + length($thing);
-    $properties: "Properties: ";
-    @if (type-of($thing) == "map") {
-      $keys: map-keys($thing);
-      @each $key, $value in $thing {
-        $properties: $properties + inspect($value);
-      }
+@function digging($thing, $times) {
+  $content: "";
+  $keys: "";
+  $separator: "";
+  @for $i from 1 through $times {
+    $separator: $separator + $tab + $space;
+    @if ($i == $times) {
+      $separator: $separator + $pipe + $dash;
     } @else {
-      $properties: $properties + inspect($thing);
+      $separator: $separator + $pipe;
     }
-    $result:
-      $line-break +
-      $start + $line-break +
-      $tab + $content + $line-break +
-      $tab + $type + $line-break +
-      $tab + $depth + $line-break +
-      $tab + $length + $line-break +
-      $tab + $properties + $line-break +
-      $end;
-    @return $result;
   }
-  @if (length($thing) == 1) {
-    $content: "Content: " + inspect($thing);
-    $type: "Type: " + type-of($thing);
-    $depth: "Depth: " + depth($thing);
-    $length: "Length: " + length($thing);
-    $properties: "Properties: ";
-    @if ($type == "map") {
-      $keys: map-keys($thing);
-      @each $key, $value in $thing {
-        $properties: $properties + inspect($value);
-      }
+  @each $key, $value in $thing {
+    @if (type-of($value) == "map") {
+      $content:
+        $content + $line-break +
+        $separator + $parenthesis-open + type-of($value) + $parenthesis-close + $space + inspect($key) + $colon + $space + digging($value, $times + 1);
     } @else {
-      $properties: $properties + inspect($thing);
+      $content:
+        $content + $line-break +
+        $separator + $parenthesis-open + type-of($value) + $parenthesis-close + $space + inspect($key) + $colon + $space + inspect($value);
     }
-    $result:
-      $line-break +
-      $start + $line-break +
-      $tab + $content + $line-break +
-      $tab + $type + $line-break +
-      $tab + $depth + $line-break +
-      $tab + $length + $line-break +
-      $tab + $properties + $line-break +
-      $end;
-    @return $result;
   }
-  @if (length($thing) > 1) {
-    $content: "Content: " + inspect($thing);
-    $type: "Type: " + type-of($thing);
-    $depth: "Depth: " + depth($thing);
-    $length: "Length: " + length($thing);
-    $properties: "Properties: ";
-    $keys: "Keys: ";
-    @if (type-of($thing) == "map") {
-      $keys: $keys + map-keys($thing);
-      @each $key, $value in $thing {
-        $properties: $properties + inspect($value);
-      }
-    } @else {
-      $keys: $keys + 0;
-      $properties: $properties + inspect($thing);
-    }
-    $result:
-      $line-break +
-      $start + $line-break +
-      $tab + $type + $line-break +
-      $tab + $depth + $line-break +
-      $tab + $length + $line-break +
-      $tab + $keys + $line-break +
-      $tab + $properties + $line-break +
-      $tab + $content + $line-break +
-      $end;
-    @return $result;
+  @return $content;
+}
+@function debugger($thing, $times: 1) {
+  $type: "Type: " + type-of($thing);
+  $length: "Length: " + length($thing);
+  $depth: "Depth: " + depth($thing);
+  $content: "Content: ";
+  @if (type-of($thing) == "map") {
+    $content:
+      $content + digging($thing, $times);
+  } @else {
+    $content:
+      $content + $parenthesis-open + type-of($thing) + $parenthesis-close + $space + inspect($thing);
   }
+  $content:
+    $content + $line-break +
+    $tab + $space + "--------------------------------------------------";
+  $result:
+    $line-break +
+    $start + $line-break +
+    $line-break +
+    $hi + $line-break +
+    $line-break +
+    $tab + $type + $line-break +
+    $tab + $length + $line-break +
+    $tab + $depth + $line-break +
+    $tab + $content + $line-break +
+    $line-break +
+    $end;
+  @return $result;
 }
 
-// (), [] are considered to have length = 0
-// "", 0, null, false, true are considered to have length = 1
+// Examples
 
-$empty: ();
-$var: "I'm a var!";
-$foo: (0);
-
-// @debug debugger($empty);
-// @debug debugger($var);
-// @debug debugger($foo);
-@debug debugger($colors);
-
-// @debug "Shades: " $shades;
-// @debug $tints;
-
-// @debug $fonts;
+// Data types
+$null: null;
+$boolean: true;
+$number: 42;
+$string: "I'm a string!";
+$color: #BADA55;
+$list: "I'm", "a", "list", "!";
+$map: (
+  key-11: value-11,
+  key-12: (
+    key-21: value-21,
+    key-22: (
+      key-31: value-31,
+      key-32: (
+        key-41: value-41,
+        key-42: value-42
+      ),
+      key-33: value-33
+    ),
+    key-23: (
+      key-33: value-33
+    )
+  )
+);
+// Empty Data types
+$empty-string: "";
+$empty-list: [];
+$empty-map: ();
+// Try it!
+@debug debugger($map);
