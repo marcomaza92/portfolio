@@ -19,7 +19,7 @@ gulp.task('serve', function() {
       // server: './',
       // browser: ['firefox', 'chromium']
     });
-    gulp.watch('*.scss', ['general']);
+    gulp.watch('./scss/**/*.scss', ['general']);
     gulp.watch([
       '*.html',
       '*.js'
@@ -28,14 +28,14 @@ gulp.task('serve', function() {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('general', function() {
-    return gulp.src('*.scss')
+    return gulp.src('./scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(sourcemaps.write('./maps'))
+    .pipe(sourcemaps.write('./scss/maps'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });

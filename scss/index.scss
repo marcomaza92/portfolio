@@ -1,13 +1,13 @@
-@import "variables";
-@import "utilities";
+@import "common/variables";
+@import "common/utilities";
 
-@import "reset";
+@import "reset/reset";
 
-@import "colors";
-@import "fonts";
-@import "spacing";
+@import "main/colors";
+@import "main/fonts";
+@import "main/spacing";
 
-// @import "debug";
+@import "common/debug";
 
 // Styles
 .regular {

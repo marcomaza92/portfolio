@@ -1,0 +1,106 @@
+// Debug
+
+@function debugger($thing) {
+  $line-break: "\A";
+  $comma: ",";
+  $space: " ";
+  $tab: "  "; // Tab = Space * 2
+  $start: "Debugger says: ";
+  $end: "EOF";
+
+  @if (length($thing) == 0) {
+    $content: "Content: " + inspect($thing);
+    $type: "Type: " + type-of($thing);
+    $depth: "Depth: " + depth($thing);
+    $length: "Length: " + length($thing);
+    $properties: "Properties: ";
+    @if (type-of($thing) == "map") {
+      $keys: map-keys($thing);
+      @each $key, $value in $thing {
+        $properties: $properties + inspect($value);
+      }
+    } @else {
+      $properties: $properties + inspect($thing);
+    }
+    $result:
+      $line-break +
+      $start + $line-break +
+      $tab + $content + $line-break +
+      $tab + $type + $line-break +
+      $tab + $depth + $line-break +
+      $tab + $length + $line-break +
+      $tab + $properties + $line-break +
+      $end;
+    @return $result;
+  }
+  @if (length($thing) == 1) {
+    $content: "Content: " + inspect($thing);
+    $type: "Type: " + type-of($thing);
+    $depth: "Depth: " + depth($thing);
+    $length: "Length: " + length($thing);
+    $properties: "Properties: ";
+    @if ($type == "map") {
+      $keys: map-keys($thing);
+      @each $key, $value in $thing {
+        $properties: $properties + inspect($value);
+      }
+    } @else {
+      $properties: $properties + inspect($thing);
+    }
+    $result:
+      $line-break +
+      $start + $line-break +
+      $tab + $content + $line-break +
+      $tab + $type + $line-break +
+      $tab + $depth + $line-break +
+      $tab + $length + $line-break +
+      $tab + $properties + $line-break +
+      $end;
+    @return $result;
+  }
+  @if (length($thing) > 1) {
+    $content: "Content: " + inspect($thing);
+    $type: "Type: " + type-of($thing);
+    $depth: "Depth: " + depth($thing);
+    $length: "Length: " + length($thing);
+    $properties: "Properties: ";
+    $keys: "Keys: ";
+    @if (type-of($thing) == "map") {
+      $keys: $keys + map-keys($thing);
+      @each $key, $value in $thing {
+        $properties: $properties + inspect($value);
+      }
+    } @else {
+      $keys: $keys + 0;
+      $properties: $properties + inspect($thing);
+    }
+    $result:
+      $line-break +
+      $start + $line-break +
+      $tab + $type + $line-break +
+      $tab + $depth + $line-break +
+      $tab + $length + $line-break +
+      $tab + $keys + $line-break +
+      $tab + $properties + $line-break +
+      $tab + $content + $line-break +
+      $end;
+    @return $result;
+  }
+}
+
+// (), [] are considered to have length = 0
+// "", 0, null, false, true are considered to have length = 1
+
+$empty: ();
+$var: "I'm a var!";
+$foo: (0);
+
+// @debug debugger($empty);
+// @debug debugger($var);
+// @debug debugger($foo);
+@debug debugger($colors);
+
+// @debug "Shades: " $shades;
+// @debug $tints;
+
+// @debug $fonts;
