@@ -25,6 +25,204 @@ h5,
 h6 {
   margin: 0; }
 
+.colors .black span:nth-of-type(1) {
+  background: black; }
+
+.colors .black span:nth-of-type(2) {
+  background: black; }
+
+.colors .black span:nth-of-type(3) {
+  background: black; }
+
+.colors .black span:nth-of-type(4) {
+  background: black; }
+
+.colors .black span:nth-of-type(5) {
+  background: black; }
+
+.colors .black span:nth-of-type(6) {
+  background: #000000; }
+
+.colors .black span:nth-of-type(7) {
+  background: #0d0d0d; }
+
+.colors .black span:nth-of-type(8) {
+  background: #1a1a1a; }
+
+.colors .black span:nth-of-type(9) {
+  background: #262626; }
+
+.colors .black span:nth-of-type(10) {
+  background: #333333; }
+
+.colors .black span:nth-of-type(11) {
+  background: #404040; }
+
+.colors .white span:nth-of-type(1) {
+  background: #bfbfbf; }
+
+.colors .white span:nth-of-type(2) {
+  background: #cccccc; }
+
+.colors .white span:nth-of-type(3) {
+  background: #d9d9d9; }
+
+.colors .white span:nth-of-type(4) {
+  background: #e6e6e6; }
+
+.colors .white span:nth-of-type(5) {
+  background: #f2f2f2; }
+
+.colors .white span:nth-of-type(6) {
+  background: #FFFFFF; }
+
+.colors .white span:nth-of-type(7) {
+  background: white; }
+
+.colors .white span:nth-of-type(8) {
+  background: white; }
+
+.colors .white span:nth-of-type(9) {
+  background: white; }
+
+.colors .white span:nth-of-type(10) {
+  background: white; }
+
+.colors .white span:nth-of-type(11) {
+  background: white; }
+
+.colors .purple span:nth-of-type(1) {
+  background: black; }
+
+.colors .purple span:nth-of-type(2) {
+  background: black; }
+
+.colors .purple span:nth-of-type(3) {
+  background: black; }
+
+.colors .purple span:nth-of-type(4) {
+  background: #110013; }
+
+.colors .purple span:nth-of-type(5) {
+  background: #27002d; }
+
+.colors .purple span:nth-of-type(6) {
+  background: #3D0046; }
+
+.colors .purple span:nth-of-type(7) {
+  background: #530060; }
+
+.colors .purple span:nth-of-type(8) {
+  background: #690079; }
+
+.colors .purple span:nth-of-type(9) {
+  background: #800093; }
+
+.colors .purple span:nth-of-type(10) {
+  background: #9600ac; }
+
+.colors .purple span:nth-of-type(11) {
+  background: #ac00c6; }
+
+.colors .yellow span:nth-of-type(1) {
+  background: #633a08; }
+
+.colors .yellow span:nth-of-type(2) {
+  background: #7a480a; }
+
+.colors .yellow span:nth-of-type(3) {
+  background: #92550b; }
+
+.colors .yellow span:nth-of-type(4) {
+  background: #aa630d; }
+
+.colors .yellow span:nth-of-type(5) {
+  background: #c1710f; }
+
+.colors .yellow span:nth-of-type(6) {
+  background: #D97F11; }
+
+.colors .yellow span:nth-of-type(7) {
+  background: #ed8c17; }
+
+.colors .yellow span:nth-of-type(8) {
+  background: #ef982e; }
+
+.colors .yellow span:nth-of-type(9) {
+  background: #f1a446; }
+
+.colors .yellow span:nth-of-type(10) {
+  background: #f2af5e; }
+
+.colors .yellow span:nth-of-type(11) {
+  background: #f4bb75; }
+
+.colors .turquoise span:nth-of-type(1) {
+  background: #051e1e; }
+
+.colors .turquoise span:nth-of-type(2) {
+  background: #083434; }
+
+.colors .turquoise span:nth-of-type(3) {
+  background: #0c4a4a; }
+
+.colors .turquoise span:nth-of-type(4) {
+  background: #0f6060; }
+
+.colors .turquoise span:nth-of-type(5) {
+  background: #137676; }
+
+.colors .turquoise span:nth-of-type(6) {
+  background: #168C8C; }
+
+.colors .turquoise span:nth-of-type(7) {
+  background: #19a2a2; }
+
+.colors .turquoise span:nth-of-type(8) {
+  background: #1db8b8; }
+
+.colors .turquoise span:nth-of-type(9) {
+  background: #20cece; }
+
+.colors .turquoise span:nth-of-type(10) {
+  background: #2adede; }
+
+.colors .turquoise span:nth-of-type(11) {
+  background: #40e1e1; }
+
+.colors .green span:nth-of-type(1) {
+  background: black; }
+
+.colors .green span:nth-of-type(2) {
+  background: black; }
+
+.colors .green span:nth-of-type(3) {
+  background: #000300; }
+
+.colors .green span:nth-of-type(4) {
+  background: #031a04; }
+
+.colors .green span:nth-of-type(5) {
+  background: #063007; }
+
+.colors .green span:nth-of-type(6) {
+  background: #09470B; }
+
+.colors .green span:nth-of-type(7) {
+  background: #0c5e0f; }
+
+.colors .green span:nth-of-type(8) {
+  background: #0f7412; }
+
+.colors .green span:nth-of-type(9) {
+  background: #128b16; }
+
+.colors .green span:nth-of-type(10) {
+  background: #14a219; }
+
+.colors .green span:nth-of-type(11) {
+  background: #17b81d; }
+
 .regular {
   font-style: normal; }
 

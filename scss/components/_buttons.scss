@@ -1,0 +1,22 @@
+.buttons {
+  &.primary {
+    background: map-get($colors, black);
+    color: map-get($colors, white);
+    transition: 0.25s all ease-in-out;
+    &:hover,
+    &:focus {
+      background: map-deep-get($tints, black-tints, black-tint-5);
+      color: map-get($colors, white);
+    }
+  }
+  &.secondary {
+    background: map-get($colors, white);
+    color: map-get($colors, black);
+    transition: 0.25s all ease-in-out;
+    &:hover,
+    &:focus {
+      background: map-deep-get($shades, white-shades, white-shade-5);
+      color: map-get($colors, black);
+    }
+  }
+}

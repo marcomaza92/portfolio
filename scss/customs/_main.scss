@@ -1,0 +1,115 @@
+img {
+  width: 100%;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $padding 0;
+  background: map-get($colors, black);
+  * {
+    color: map-get($colors, white);
+  }
+  h1 {
+    float: left;
+    width: calc(80% - #{$margin});
+    margin-left: $margin;
+  }
+  #menu-open {
+    display: inline-block;
+    width: calc(20% - #{$margin});
+    margin-right: $margin;
+    text-align: right;
+    font-size: map-get($fonts, font-h1);
+  }
+  nav {
+    clear: both;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(map-get($colors, black), 0.9);
+    #menu-close {
+      position: absolute;
+      top: $position;
+      right: $position;
+      font-size: map-get($fonts, font-h1);
+    }
+    ul {
+      list-style: none;
+      margin-top: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
+      li {
+        margin-top: calc(2 * #{$margin});
+        a,
+        button {
+          font-size: map-get($fonts, font-h2);
+        }
+        button {
+          width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
+        }
+      }
+    }
+  }
+  nav.close {
+    display: none;
+  }
+}
+main {
+  margin-top: calc((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin});
+}
+.menu {
+  display: block;
+  position: relative;
+  top: calc((-1) * ((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin}));
+  visibility: hidden;
+}
+.about {
+  margin: $margin;
+}
+.work {
+  background: map-deep-get($shades, white-shades, white-shade-2);
+  padding: $padding;
+  margin: $margin 0;
+  & > * {
+    img {
+      margin: $margin 0;
+    }
+    a {
+      display: block;
+      width: 100%;
+      text-align: right;
+      margin: $margin 0;
+    }
+    a:first-of-type {
+      margin: 0;
+    }
+  }
+}
+.knowledge {
+  margin: $margin;
+  span {
+    display: inline-block;
+    margin: calc(#{$margin} / 2) 0;
+    margin-right: calc(#{$margin} / 4);
+    padding: $padding;
+    background: rgba(map-deep-get($shades, white-shades, white-shade-2), 0.8);
+  }
+}
+.contact {
+  background: map-deep-get($shades, white-shades, white-shade-2);
+  padding: $padding;
+  margin: $margin 0;
+  h1 {
+    margin-bottom: calc(2 * #{$margin});
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    margin-top: calc(2 * #{$margin});
+  }
+}
+footer {
+  text-align: center;
+}

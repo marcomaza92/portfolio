@@ -1,6 +1,8 @@
 // Debug
 
-// Variables for formatting
+// Variables
+
+// Format Variables
 $line-break: "\A";
 $comma: ",";
 $colon: ":";
@@ -14,9 +16,11 @@ $start: "====================  SCSS Debugger  ====================";
 $hi: "Debugger says:";
 $end: "====================  End of SCSS Debugger  ====================";
 
+// Functions
+
+// Recursive Function
 @function digging($thing, $times) {
   $content: "";
-  $keys: "";
   $separator: "";
   @for $i from 1 through $times {
     $separator: $separator + $tab + $space;
@@ -27,18 +31,23 @@ $end: "====================  End of SCSS Debugger  ====================";
     }
   }
   @each $key, $value in $thing {
+    $content:
+      $content + $line-break + $separator;
     @if (type-of($value) == "map") {
       $content:
-        $content + $line-break +
-        $separator + $parenthesis-open + type-of($value) + $parenthesis-close + $space + inspect($key) + $colon + $space + digging($value, $times + 1);
+        $content +
+        $parenthesis-open + type-of($value) + $parenthesis-close + $space +
+        inspect($key) + $colon + $space + digging($value, $times + 1);
     } @else {
       $content:
-        $content + $line-break +
-        $separator + $parenthesis-open + type-of($value) + $parenthesis-close + $space + inspect($key) + $colon + $space + inspect($value);
+        $content +
+        $parenthesis-open + type-of($value) + $parenthesis-close + $space +
+        inspect($key) + $colon + $space + inspect($value);
     }
   }
   @return $content;
 }
+// Main Function
 @function debugger($thing, $times: 1) {
   $type: "Type: " + type-of($thing);
   $length: "Length: " + length($thing);
@@ -46,26 +55,21 @@ $end: "====================  End of SCSS Debugger  ====================";
   $content: "Content: ";
   @if (type-of($thing) == "map") {
     $content:
-      $content + digging($thing, $times);
+      $content + digging($thing, $times) +
+      $line-break + $tab + $space +
+      "--------------------------------------------------";
   } @else {
     $content:
       $content + $parenthesis-open + type-of($thing) + $parenthesis-close + $space + inspect($thing);
   }
-  $content:
-    $content + $line-break +
-    $tab + $space + "--------------------------------------------------";
   $result:
-    $line-break +
-    $start + $line-break +
-    $line-break +
-    $hi + $line-break +
-    $line-break +
+    $line-break + $line-break + $start + $line-break + $line-break +
+    $hi + $line-break + $line-break +
     $tab + $type + $line-break +
     $tab + $length + $line-break +
     $tab + $depth + $line-break +
     $tab + $content + $line-break +
-    $line-break +
-    $end;
+    $line-break + $end + $line-break;
   @return $result;
 }
 
@@ -99,5 +103,18 @@ $map: (
 $empty-string: "";
 $empty-list: [];
 $empty-map: ();
+
 // Try it!
-@debug debugger($map);
+// @debug debugger($number);
+// @debug debugger($map);
+
+// Framework Variables
+// @debug debugger($colors);
+@debug debugger($shades);
+// @debug debugger($tints);
+//
+// @debug debugger($fonts);
+//
+// @debug debugger($padding);
+// @debug debugger($margin);
+// @debug debugger($position);

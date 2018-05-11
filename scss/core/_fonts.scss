@@ -15,3 +15,12 @@ $font-sizes-length: length($font-sizes);
 } @else {
   @error 'Lengths from $font-names and $font-sizes are not equal. They must be the same';
 }
+.regular {
+  font-style: normal;
+}
+.italic {
+  font-style: italic;
+}
+.bold {
+  font-weight: bold;
+}

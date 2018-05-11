@@ -1,0 +1,32 @@
+.links {
+  &.primary {
+    color: map-get($colors, black);
+    transition: 0.25s all ease-in-out;
+    &:hover,
+    &:focus {
+      color: map-deep-get($tints, black-tints, black-tint-5);
+    }
+    &:visited {
+      color: map-deep-get($shades, turquoise-shades, turquoise-shade-1);
+      transition: 0.25s all ease-in-out;
+      &:hover {
+        color: map-deep-get($tints, turquoise-tints, turquoise-tint-5);
+      }
+    }
+  }
+  &.secondary {
+    color: map-get($colors, white);
+    transition: 0.25s all ease-in-out;
+    &:hover,
+    &:focus {
+      color: map-deep-get($shades, white-shades, white-shade-5);
+    }
+    &:visited {
+      color: map-deep-get($tints, turquoise-tints, turquoise-tint-1);
+      transition: 0.25s all ease-in-out;
+      &:hover {
+        color: map-deep-get($tints, turquoise-tints, turquoise-tint-5);
+      }
+    }
+  }
+}

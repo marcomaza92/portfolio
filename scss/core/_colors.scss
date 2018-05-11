@@ -26,11 +26,13 @@ $colors: (
     $step: $step + $gap;
     // Create shade
     $temp-shade: (
+      // From lighter to darker
       #{$color-name}-shade-#{$i}: darken($color-value, $step)
     );
     $shade: map-merge($shade, $temp-shade);
     // Create tint
     $temp-tint: (
+      // From darken to lighter
       #{$color-name}-tint-#{$i}: lighten($color-value, $step)
     );
     $tint: map-merge($tint, $temp-tint);
@@ -59,4 +61,28 @@ $colors: (
   $shades: map-merge($shades, $current-temp-shade);
   // Add tint to its main-map
   $tints: map-merge($tints, $current-temp-tint);
+}
+// Generate class .colors
+.colors {
+  @each $color-name, $color-value in $colors {
+    .#{$color-name} {
+      @for $i from 1 through 11 {
+        @if ($i <= 5) {
+          span:nth-of-type(#{$i}) {
+            background: map-deep-get($shades, #{$color-name}-shades, #{$color-name}-shade-#{6 - $i});
+          }
+        }
+        @if ($i == 6) {
+          span:nth-of-type(6) {
+            background: map-get($colors, $color-name);
+          }
+        }
+        @if ($i >= 7) {
+          span:nth-of-type(#{$i}) {
+            background: map-deep-get($tints, #{$color-name}-tints, #{$color-name}-tint-#{$i - 6});
+          }
+        }
+      }
+    }
+  }
 }
