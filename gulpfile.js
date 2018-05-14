@@ -16,7 +16,7 @@ const path = require('path');
 gulp.task('serve', function() {
     browserSync.init({
       // proxy: 'http://mmaza.darwoft.com/projects/ect'
-      // server: './',
+      // server: './'
       // browser: ['firefox', 'chromium']
     });
     gulp.watch('./scss/**/*.scss', ['general']);

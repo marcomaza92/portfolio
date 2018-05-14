@@ -1,32 +1,40 @@
-.links {
-  &.primary {
-    color: map-get($colors, black);
-    transition: 0.25s all ease-in-out;
-    &:hover,
-    &:focus {
-      color: map-deep-get($tints, black-tints, black-tint-5);
-    }
-    &:visited {
-      color: map-deep-get($shades, turquoise-shades, turquoise-shade-1);
+// File: Links
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
+@mixin createLinks($primary, $secondary, $tertiary) {
+  .link {
+    &.primary {
+      color: $primary;
       transition: 0.25s all ease-in-out;
-      &:hover {
-        color: map-deep-get($tints, turquoise-tints, turquoise-tint-5);
+      &:hover,
+      &:focus {
+        color: $secondary;
+      }
+      &:visited {
+        color: $tertiary;
+        transition: 0.25s all ease-in-out;
+        &:hover {
+          color: $secondary;
+        }
       }
     }
-  }
-  &.secondary {
-    color: map-get($colors, white);
-    transition: 0.25s all ease-in-out;
-    &:hover,
-    &:focus {
-      color: map-deep-get($shades, white-shades, white-shade-5);
-    }
-    &:visited {
-      color: map-deep-get($tints, turquoise-tints, turquoise-tint-1);
+    &.secondary {
+      color: $secondary;
       transition: 0.25s all ease-in-out;
-      &:hover {
-        color: map-deep-get($tints, turquoise-tints, turquoise-tint-5);
+      &:hover,
+      &:focus {
+        color: $primary;
+      }
+      &:visited {
+        color: $tertiary;
+        transition: 0.25s all ease-in-out;
+        &:hover {
+          color: $primary;
+        }
       }
     }
   }
 }
+@include createLinks($primary, $secondary, $tertiary);

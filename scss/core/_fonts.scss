@@ -1,26 +1,42 @@
-// Get the lengths of boths arrays
-$font-names-length: length($font-names);
-$font-sizes-length: length($font-sizes);
-// Check if the length are equal
-@if $font-names-length == $font-sizes-length {
-  // Loop the map with the font-names length
-  @for $i from 1 through $font-names-length {
-    $current-name: nth($font-names, $i);
-    $current-size: nth($font-sizes, $i);
-    $font-temp: (
-      font-#{$current-name}: $base * $current-size
-    );
-    $fonts: map-merge($fonts, $font-temp);
+// File: Fonts
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
+// Variables
+$font-elements: 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a';
+$font-sizes: 2.5, 2, 1.5, 1, 0.75, 0.625, 1, 1;
+$font-styles: 'normal', 'italic';
+$font-weights: 'lighter', 'normal', 'bold', 'bolder';
+// Mixins
+@mixin createFontSizes($element, $size, $multiplicator) {
+  #{$element} {
+    font-size: #{$multiplicator * $size}rem;
+  }
+}
+@mixin createFontStyles($style) {
+  .#{$style} {
+    font-style: unquote($style);
+  }
+}
+@mixin createFontWeights($weight) {
+  .#{$weight} {
+    font-weight: unquote($weight);
+  }
+}
+// Instructions
+@if length($font-elements) == length($font-sizes) {
+  @for $i from 1 through length($font-elements) {
+    $font-element: nth($font-elements, $i);
+    $font-size: nth($font-sizes, $i);
+    @include createFontSizes($font-element, $font-size, $font-multiplicator);
   }
 } @else {
   @error 'Lengths from $font-names and $font-sizes are not equal. They must be the same';
 }
-.regular {
-  font-style: normal;
+@each $font-style in $font-styles {
+  @include createFontStyles($font-style);
 }
-.italic {
-  font-style: italic;
-}
-.bold {
-  font-weight: bold;
+@each $font-weight in $font-weights {
+  @include createFontWeights($font-weight);
 }

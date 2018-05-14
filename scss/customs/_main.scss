@@ -1,3 +1,8 @@
+// File: Main
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
 img {
   width: 100%;
 }
@@ -21,7 +26,7 @@ header {
     width: calc(20% - #{$margin});
     margin-right: $margin;
     text-align: right;
-    font-size: map-get($fonts, font-h1);
+    // font-size: map-get($fonts, font-h1);
   }
   nav {
     clear: both;
@@ -33,22 +38,22 @@ header {
     background: rgba(map-get($colors, black), 0.9);
     #menu-close {
       position: absolute;
-      top: $position;
-      right: $position;
-      font-size: map-get($fonts, font-h1);
+      // top: $position;
+      // right: $position;
+      // font-size: map-get($fonts, font-h1);
     }
     ul {
       list-style: none;
-      margin-top: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
+      // margin-top: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
       li {
         margin-top: calc(2 * #{$margin});
-        a,
-        button {
-          font-size: map-get($fonts, font-h2);
-        }
-        button {
-          width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
-        }
+        // a,
+        // button {
+        //   // font-size: map-get($fonts, font-h2);
+        // }
+        // button {
+        //   // width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
+        // }
       }
     }
   }
@@ -56,13 +61,13 @@ header {
     display: none;
   }
 }
-main {
-  margin-top: calc((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin});
-}
+// main {
+//   // margin-top: calc((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin});
+// }
 .menu {
   display: block;
   position: relative;
-  top: calc((-1) * ((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin}));
+  // top: calc((-1) * ((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin}));
   visibility: hidden;
 }
 .about {

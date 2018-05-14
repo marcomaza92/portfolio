@@ -1,4 +1,7 @@
-// Reset
+// File: Reset
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
 
 body {
   padding: 0;
@@ -25,24 +28,4 @@ h4,
 h5,
 h6 {
   margin: 0;
-}
-h1 {
-  font-size: map-get($fonts, font-h1);
-}
-h2 {
-  font-size: map-get($fonts, font-h2);
-}
-h3 {
-  font-size: map-get($fonts, font-h3);
-}
-h4,
-p,
-a {
-  font-size: map-get($fonts, font-base);
-}
-h5 {
-  font-size: map-get($fonts, font-h5);
-}
-h6 {
-  font-size: map-get($fonts, font-h6);
 }

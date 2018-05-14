@@ -1,3 +1,8 @@
+// File: Small
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
 
@@ -9,17 +14,20 @@
   header {
     nav {
       ul {
-        margin-top: calc(#{$margin} + #{map-get($fonts, font-h1)});
+        // margin-top: calc(#{$margin} + #{map-get($fonts, font-h1)});
         margin-left: calc(2 * #{$margin});
         li {
           display: inline-block;
           width: calc(50% - #{$margin});
           text-align: center;
           &:last-of-type {
-            width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
+            // width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
           }
         }
       }
     }
   }
+}
+@mixin small($small) {
+  @media (orientation: )
 }

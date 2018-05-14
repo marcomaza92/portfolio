@@ -1,22 +1,30 @@
-.buttons {
-  &.primary {
-    background: map-get($colors, black);
-    color: map-get($colors, white);
-    transition: 0.25s all ease-in-out;
-    &:hover,
-    &:focus {
-      background: map-deep-get($tints, black-tints, black-tint-5);
-      color: map-get($colors, white);
+// File: Buttons
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
+@mixin createButtons($primary, $secondary) {
+  .button {
+    &.primary {
+      background: $primary;
+      color: $secondary;
+      transition: 0.25s all ease-in-out;
+      &:hover,
+      &:focus {
+        background: $primary;
+        color: $secondary;
+      }
     }
-  }
-  &.secondary {
-    background: map-get($colors, white);
-    color: map-get($colors, black);
-    transition: 0.25s all ease-in-out;
-    &:hover,
-    &:focus {
-      background: map-deep-get($shades, white-shades, white-shade-5);
-      color: map-get($colors, black);
+    &.secondary {
+      background: $secondary;
+      color: $primary;
+      transition: 0.25s all ease-in-out;
+      &:hover,
+      &:focus {
+        background: $secondary;
+        color: $primary;
+      }
     }
   }
 }
+@include createButtons($primary, $secondary);

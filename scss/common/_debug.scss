@@ -1,8 +1,9 @@
-// Debug
+// File: Debug
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
 
 // Variables
-
-// Format Variables
 $line-break: "\A";
 $comma: ",";
 $colon: ":";
@@ -15,10 +16,7 @@ $parenthesis-close: ")";
 $start: "====================  SCSS Debugger  ====================";
 $hi: "Debugger says:";
 $end: "====================  End of SCSS Debugger  ====================";
-
 // Functions
-
-// Recursive Function
 @function digging($thing, $times) {
   $content: "";
   $separator: "";
@@ -47,7 +45,6 @@ $end: "====================  End of SCSS Debugger  ====================";
   }
   @return $content;
 }
-// Main Function
 @function debugger($thing, $times: 1) {
   $type: "Type: " + type-of($thing);
   $length: "Length: " + length($thing);
@@ -72,9 +69,6 @@ $end: "====================  End of SCSS Debugger  ====================";
     $line-break + $end + $line-break;
   @return $result;
 }
-
-// Examples
-
 // Data types
 $null: null;
 $boolean: true;
@@ -103,18 +97,10 @@ $map: (
 $empty-string: "";
 $empty-list: [];
 $empty-map: ();
-
 // Try it!
 // @debug debugger($number);
 // @debug debugger($map);
-
 // Framework Variables
 // @debug debugger($colors);
-@debug debugger($shades);
+// @debug debugger($shades);
 // @debug debugger($tints);
-//
-// @debug debugger($fonts);
-//
-// @debug debugger($padding);
-// @debug debugger($margin);
-// @debug debugger($position);

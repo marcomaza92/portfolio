@@ -21,17 +21,17 @@
         right: $position;
       }
       ul {
-        margin-top: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
-        margin-left: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
+        // margin-top: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
+        // margin-left: calc(2 * (#{$margin} + #{map-get($fonts, font-h1)}));
         li {
           text-align: left;
-          width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
+          // width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
           margin-top: calc(2 * #{$margin});
           &:last-of-type {
-            width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
+            // width: calc(100% - #{$margin} - #{map-get($fonts, font-h1)});
           }
           button {
-            width: calc(75% - #{$margin} - #{map-get($fonts, font-h1)});
+            // width: calc(75% - #{$margin} - #{map-get($fonts, font-h1)});
           }
         }
       }
@@ -41,10 +41,10 @@
     }
   }
   main {
-    margin-top: calc((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin});
+    // margin-top: calc((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin});
   }
   .menu {
-    top: calc((-1) * ((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin}));
+    // top: calc((-1) * ((2 * #{$margin}) + #{map-get($fonts, font-h1)} + #{$margin}));
   }
   .about {
     display: grid;

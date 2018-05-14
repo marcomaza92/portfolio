@@ -1,86 +1,78 @@
-// Colors
+// File: Colors
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
 
-// Definition
-
-// Map with the colors of your choice.
-// Chromatic shold be left as is.
-// Main can be empty (i.e.: Chromatic colors == Main colors).
-$colors: (
-  // Chromatic
-  black: #000000,
-  white: #FFFFFF,
-  // Main
-  purple: #3D0046,
-  yellow: #D97F11,
-  turquoise: #168C8C,
-  green: #09470B
-);
-
-// Shades and Tints
-
-@function createShadesAndTints($color-name, $color-value) {
+// Variables
+$step: 0;
+$shades: ();
+$tints: ();
+$color-elements: 'background', 'color', 'border-color';
+$color-types: 'base', 'shade', 'tint';
+// Mixins
+@mixin createColorClasses($element, $type, $name, $value) {
+  .#{$element}.#{$type}.#{$name} {
+    #{$element}: $value;
+  }
+}
+// Check if you pay attention to the previous conditions
+@if $gap * $count >= 0 and $gap * $count <= 100 {
+  $gap: $gap;
+  $count: $count;
+} @else {
+  @error 'Out of range: $gap * $count must be an integer between 0 and 100';
+}
+// Functions
+@function createShadesAndTints($name, $value) {
   $shade: ();
   $tint: ();
   @for $i from 1 through $count {
-    // Fine Tune
     $step: $step + $gap;
-    // Create shade
     $temp-shade: (
-      // From lighter to darker
-      #{$color-name}-shade-#{$i}: darken($color-value, $step)
+      #{$name}-shade-#{$i}: darken($value, ($gap * ($count + 1)) - $step)
     );
     $shade: map-merge($shade, $temp-shade);
-    // Create tint
     $temp-tint: (
-      // From darken to lighter
-      #{$color-name}-tint-#{$i}: lighten($color-value, $step)
+      #{$name}-tint-#{$i}: lighten($value, $step)
     );
     $tint: map-merge($tint, $temp-tint);
   }
-  // Return a list so we can do everything in one function
   @return $shade, $tint;
 }
-// Iterate all the colors
+// Instructions
 @each $color-name, $color-value in $colors {
-  $current-temp-shade: ();
-  $current-temp-tint: ();
-  // Call the function
-  $current-result: createShadesAndTints($color-name, $color-value);
-  // Parse the result from the function
-  $current-shade: nth($current-result, 1);
-  $current-tint: nth($current-result, 2);
-  // Add shade to its sub-map
-  $current-temp-shade: (
-    #{$color-name}-shades: $current-shade
+  $color-temp-shade: ();
+  $color-temp-tint: ();
+  $color-result: createShadesAndTints($color-name, $color-value);
+  $color-shade: nth($color-result, 1);
+  $color-tint: nth($color-result, 2);
+  $color-temp-shade: (
+    #{$color-name}-shades: $color-shade
   );
-  // Add tint to its sub-map
-  $current-temp-tint: (
-    #{$color-name}-tints: $current-tint
+  $color-temp-tint: (
+    #{$color-name}-tints: $color-tint
   );
-  // Add shade to its main-map
-  $shades: map-merge($shades, $current-temp-shade);
-  // Add tint to its main-map
-  $tints: map-merge($tints, $current-temp-tint);
+  $shades: map-merge($shades, $color-temp-shade);
+  $tints: map-merge($tints, $color-temp-tint);
 }
-// Generate class .colors
-.colors {
-  @each $color-name, $color-value in $colors {
-    .#{$color-name} {
-      @for $i from 1 through 11 {
-        @if ($i <= 5) {
-          span:nth-of-type(#{$i}) {
-            background: map-deep-get($shades, #{$color-name}-shades, #{$color-name}-shade-#{6 - $i});
-          }
+@each $color-element in $color-elements {
+  @each $color-type in $color-types {
+    @if $color-type == 'base' {
+      @each $color-name, $color-value in $colors {
+        @include createColorClasses($color-element, $color-type, $color-name, $color-value);
+      }
+    }
+    @if $color-type == 'shade' {
+      @each $color-shade, $color-sub-shade in $shades {
+        @each $color-shade-name, $color-shade-value in $color-sub-shade {
+          @include createColorClasses($color-element, $color-type, $color-shade-name, $color-shade-value);
         }
-        @if ($i == 6) {
-          span:nth-of-type(6) {
-            background: map-get($colors, $color-name);
-          }
-        }
-        @if ($i >= 7) {
-          span:nth-of-type(#{$i}) {
-            background: map-deep-get($tints, #{$color-name}-tints, #{$color-name}-tint-#{$i - 6});
-          }
+      }
+    }
+    @if $color-type == 'tint' {
+      @each $color-tint, $color-sub-tint in $tints {
+        @each $color-tint-name, $color-tint-value in $color-sub-tint {
+          @include createColorClasses($color-element, $color-type, $color-tint-name, $color-tint-value);
         }
       }
     }
