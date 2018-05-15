@@ -11,11 +11,12 @@
 @import "components/buttons";
 @import "components/links";
 @import "components/images";
-// Debugger
-@import "common/debug";
 // Styles
 @import "customs/main";
-// Media Queries - Bootstrap 4 | Mobile First | Custom Queries
+// Media Queries
 @import "queries/small";
 @import "queries/medium";
 @import "queries/large";
+@import "queries/super";
+// Debugger
+@import "common/debug";

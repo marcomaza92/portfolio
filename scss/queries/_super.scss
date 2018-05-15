@@ -1,0 +1,8 @@
+// File: Super
+// Author: Marco Maza
+// Version: 1.0.0
+// License: MIT
+
+@include createMediaQueries(map-get($break-points, super)) {
+  // Styles for super large media query
+};

@@ -38,7 +38,15 @@ $margin: 1rem;
 $padding: 1rem;
 
 // Media queries
-// Sizes
-$small: 575px;
+// Break-points
+$break-points: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  super: 1200px
+);
 // Orientation
-$portrait: portrait;
+$orientation: (
+  portrait: portrait,
+  landscape: landscape
+);
