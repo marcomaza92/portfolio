@@ -5,21 +5,7 @@
   "main": "index.html",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "*",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "*",
-    "gulp-clean-css": "*",
-    "gulp-cli": "*",
-    "gulp-concat": "*",
-    "gulp-cssmin": "*",
-    "gulp-js-minify": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-svgmin": "*",
-    "gulp-svgstore": "*",
-    "gulp-watch": "*",
-    "node-sass": "*",
-    "path": "*"
+    "nuxt": "^1.4.1"
   },
   "scripts": {
     "test": "test.js"
