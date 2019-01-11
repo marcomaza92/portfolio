@@ -1,8 +1,0 @@
-// File: Medium
-// Author: Marco Maza
-// Version: 1.0.0
-// License: MIT
-
-@include createMediaQueries(map-get($break-points, medium)) {
-  // Styles for medium media query
-};
