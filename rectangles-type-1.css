@@ -1,0 +1,35 @@
+.rectangles-type-1-001 {
+	grid-area: 1 / 1 / 2 / span 2;
+}
+
+.rectangles-type-1-002 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.rectangles-type-1-010 {
+  grid-area: 2 / 4 / 3 / span 3;
+}
+
+.rectangles-type-1-011 {
+  grid-area: 2 / 5 / 3 / 6;
+}
+
+.rectangles-type-1-012 {
+  grid-area: 2 / 6 / 3 / 7;
+}
+
+.rectangles-type-1-015 {
+  grid-area: 3 / 4 / span 2 / 5;
+}
+
+.rectangles-type-1-022 {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
+.rectangles-type-1-032 {
+  grid-area: 6 / 2 / 7 / span 2;
+}
+
+.rectangles-type-1-033 {
+  grid-area: 6 / 3 / 7 / 4;
+}
