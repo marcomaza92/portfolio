@@ -1,0 +1,23 @@
+[class$="content-type-1"] {
+	z-index: var(--level-2-1)
+}
+
+[class$="content-type-2"] {
+	z-index: var(--level-2-2)
+}
+
+[class$="content-type-3"] {
+	z-index: var(--level-2-3)
+}
+
+.content-type-3-041,
+.content-type-3-062,
+.content-type-3-094,
+.content-type-2-002,
+.content-type-2-010,
+.content-type-2-022,
+.content-type-2-049,
+.content-type-1-004 {
+	outline: var(--border);
+	background: var(--color-secondary-2);
+}

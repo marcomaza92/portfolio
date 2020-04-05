@@ -1,0 +1,65 @@
+[class$="rectangles-type-1"] {
+	z-index: var(--level-1-1)
+}
+
+[class$="rectangles-type-2"] {
+	z-index: var(--level-1-2)
+}
+
+[class$="rectangles-type-3"] {
+	z-index: var(--level-1-3)
+}
+
+.rectangles-type-3-004,
+.rectangles-type-3-021,
+.rectangles-type-3-034,
+.rectangles-type-3-036,
+.rectangles-type-3-053,
+.rectangles-type-3-061,
+.rectangles-type-3-093,
+.rectangles-type-3-096,
+.rectangles-type-2-010,
+.rectangles-type-2-014,
+.rectangles-type-2-017,
+.rectangles-type-2-028,
+.rectangles-type-2-043,
+.rectangles-type-2-053,
+.rectangles-type-1-001,
+.rectangles-type-1-010,
+.rectangles-type-1-015,
+.rectangles-type-1-032 {
+  outline: var(--border);
+}
+
+.rectangles-type-3-036,
+.rectangles-type-3-061,
+.rectangles-type-2-010,
+.rectangles-type-2-053 {
+  background: var(--color-secondary-1);
+}
+
+.rectangles-type-3-096 {
+  background: var(--color-secondary-2);
+}
+
+.rectangles-type-3-004,
+.rectangles-type-3-021,
+.rectangles-type-3-034,
+.rectangles-type-3-053,
+.rectangles-type-3-093 {
+  background: var(--color-primary-3);
+}
+
+.rectangles-type-2-014,
+.rectangles-type-2-017,
+.rectangles-type-2-028,
+.rectangles-type-2-043 {
+  background: var(--color-primary-2);
+}
+
+.rectangles-type-1-001,
+.rectangles-type-1-010,
+.rectangles-type-1-015,
+.rectangles-type-1-032 {
+  background: var(--color-primary-1);
+}
