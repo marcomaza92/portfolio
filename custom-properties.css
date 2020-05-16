@@ -50,35 +50,17 @@
     /* Grids */
 
       /* Grid Columns */
-      --grid-columns-type-1: 6;
-      --grid-columns-type-2: 8;
-      --grid-columns-type-3: 10;
+			--grid-columns: 20;
 
       /* Grid Rows */
-      --grid-rows-type-1: 6;
-      --grid-rows-type-2: 8;
-      --grid-rows-type-3: 10;
+      --grid-rows: 20;
 
       /* Grid Containers */
-      --grid-container-type-1: repeat(var(--grid-columns-type-1), 1fr) / repeat(var(--grid-rows-type-1), 1fr);
-      --grid-container-type-2: repeat(var(--grid-columns-type-2), 1fr) / repeat(var(--grid-rows-type-2), 1fr);
-      --grid-container-type-3: repeat(var(--grid-columns-type-3), 1fr) / repeat(var(--grid-rows-type-3), 1fr);
+      --grid-container: repeat(var(--grid-columns), 1fr) / repeat(var(--grid-rows), 1fr);
 
       /* Grid Elements */
-      --grid-element-type-1-width: calc(var(--base-width) / var(--grid-columns-type-1));
-      --grid-element-type-2-width: calc(var(--base-width) / var(--grid-columns-type-2));
-      --grid-element-type-3-width: calc(var(--base-width) / var(--grid-columns-type-3));
-      --grid-element-type-1-height: calc(var(--base-height) / var(--grid-rows-type-1));
-      --grid-element-type-2-height: calc(var(--base-height) / var(--grid-rows-type-2));
-      --grid-element-type-3-height: calc(var(--base-height) / var(--grid-rows-type-3));
-      --grid-element-type-1-color: var(--color-primary-1);
-      --grid-element-type-2-color: var(--color-primary-2);
-      --grid-element-type-3-color: var(--color-primary-3);
-
-      /* Grids Guides */
-      --grid-guide-yellow: solid 2px var(--color-primary-3);
-      --grid-guide-blue: solid 2px var(--color-primary-2);
-      --grid-guide-red: solid 2px var(--color-primary-1);
+      --grid-element-width: calc(var(--base-width) / var(--grid-columns));
+      --grid-element-height: calc(var(--base-height) / var(--grid-rows));
 
     /* Spacing */
     --spacing-extra-large: 2rem;
@@ -93,8 +75,4 @@
     /* Z-index */
     --level-1-1: 1;
     --level-1-2: 2;
-		--level-1-3: 3;
-		--level-2-1: 11;
-    --level-2-2: 12;
-    --level-2-3: 13;
 }

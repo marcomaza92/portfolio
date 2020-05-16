@@ -1,0 +1,41 @@
+.content-4,
+.content-12,
+.content-63,
+.content-114,
+.content-181,
+.content-243,
+.content-301,
+.content-367 {
+	background: var(--color-secondary-2);
+	outline: var(--border);
+}
+
+.content-301 {
+	margin-block-start: var(--spacing-extra-small);
+	margin-top: var(--spacing-extra-small);
+}
+
+.content-181 {
+	margin-inline-end: var(--spacing-extra-small);
+	margin-right: var(--spacing-extra-small);
+}
+
+.content-12,
+.content-181 {
+	margin-block-end: var(--spacing-extra-small);
+	margin-bottom: var(--spacing-extra-small);
+}
+
+.content-114 {
+	margin-inline-start: var(--spacing-extra-small);
+	margin-left: var(--spacing-extra-small);
+}
+
+@include drawer(1, 4, 2, 5, 20, "content");
+@include drawer(1, 12, 3, 9, 20, "content");
+@include drawer(4, 3, 5, 8, 20, "content");
+@include drawer(6, 14, 15, 7, 20, "content");
+@include drawer(10, 1, 2, 8, 20, "content");
+@include drawer(13, 3, 2, 8, 20, "content");
+@include drawer(16, 1, 5, 5, 20, "content");
+@include drawer(19, 7, 2, 6, 20, "content");

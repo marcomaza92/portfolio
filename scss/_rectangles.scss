@@ -1,0 +1,82 @@
+.rectangle-1,
+.rectangle-9,
+.rectangle-44,
+.rectangle-74,
+.rectangle-71,
+.rectangle-81,
+.rectangle-121,
+.rectangle-151,
+.rectangle-169,
+.rectangle-241,
+.rectangle-225,
+.rectangle-251,
+.rectangle-284,
+.rectangle-311,
+.rectangle-326,
+.rectangle-366 {
+	outline: var(--border);
+}
+.rectangle-1,
+.rectangle-71,
+.rectangle-251,
+.rectangle-326 {
+	background: var(--color-primary-1);
+}
+
+.rectangle-74,
+.rectangle-121,
+.rectangle-169,
+.rectangle-284 {
+	background: var(--color-primary-2);
+}
+
+.rectangle-9,
+.rectangle-81,
+.rectangle-225,
+.rectangle-366 {
+	background: var(--color-primary-3);
+}
+
+.rectangle-44,
+.rectangle-151,
+.rectangle-241,
+.rectangle-311 {
+	background: var(--color-secondary-1);
+}
+
+.rectangle-284,
+.rectangle-311 {
+	margin-block-start: var(--spacing-extra-small);
+	margin-top: var(--spacing-extra-small);
+}
+
+.rectangle-1,
+.rectangle-311 {
+	margin-block-end: var(--spacing-extra-small);
+	margin-bottom: var(--spacing-extra-small);
+}
+
+.rectangle-74,
+.rectangle-311 {
+	margin-inline-start: var(--spacing-extra-small) 0;
+	margin-left: var(--spacing-extra-small);
+}
+
+@include drawer(3, 3, $columns: 16);
+
+@include drawer(1, 1, 3, 3, 20, "rectangle");
+@include drawer(1, 9, 2, 3, 20, "rectangle");
+@include drawer(3, 4, 1, 5, 20, "rectangle");
+@include drawer(4, 14, 2, 7, 20, "rectangle");
+@include drawer(4, 11, 4, 3, 20, "rectangle");
+@include drawer(5, 1, 2, 2, 20, "rectangle");
+@include drawer(7, 1, 2, 2, 20, "rectangle");
+@include drawer(8, 11, 1, 3, 20, "rectangle");
+@include drawer(9, 9, 2, 5, 20, "rectangle");
+@include drawer(12, 5, 1, 9, 20, "rectangle");
+@include drawer(13, 1, 2, 2, 20, "rectangle");
+@include drawer(13, 11, 2, 3, 20, "rectangle");
+@include drawer(15, 4, 1, 9, 20, "rectangle");
+@include drawer(16, 11, 3, 3, 20, "rectangle");
+@include drawer(17, 6, 2, 5, 20, "rectangle");
+@include drawer(19, 6, 2, 1, 20, "rectangle");

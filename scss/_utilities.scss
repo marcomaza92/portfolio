@@ -1,0 +1,30 @@
+@use "sass:meta";
+
+@mixin drawer($block-start, $inline-start, $block-end: 1, $inline-end: 1, $columns: 20, $type: "rectangle") {
+
+	@debug($block-start, $inline-start, $block-end, $inline-end, $columns, $type);
+
+	$current-block-end: 0;
+	$current-block-start: 0;
+	$current-inline-start: 0;
+	$current-inline-end: 0;
+
+	$current-position: (($columns * ($block-start - 1)) + $inline-start) - 1;
+
+	@for $current-block from 1 through $block-end {
+		$current-block-start: ($block-start - 1) + $current-block;
+		$current-block-end: ($block-start - 1) + ($current-block + 1);
+		@for $current-inline from 1 through $inline-end {
+			$current-inline-start: ($inline-start - 1) + $current-inline;
+			$current-inline-end: ($inline-start - 1) + ($current-inline + 1);
+			.#{$type}-#{$current-position + $current-inline} {
+				@if ($current-block == 1 and $current-inline == 1) {
+					grid-area: #{$current-block-start "/" $current-inline-start "/ span" $block-end "/ span" $inline-end};
+				} @else {
+					grid-area: #{$current-block-start "/" $current-inline-start "/" $current-block-end "/" $current-inline-end};
+				}
+			}
+		}
+		$current-position: $current-position + $columns;
+	}
+};

@@ -61,26 +61,15 @@ span.secondary {
   box-sizing: border-box;
 }
 
-[class^="grid-rectangles"],
-[class^="grid-content"] {
+.grid-rectangles,
+.grid-content {
   position: absolute;
-  display: grid;
+	display: grid;
+	grid-template: var(--grid-container);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-}
-
-[class$="-type-1"] {
-  grid-template: var(--grid-container-type-1);
-}
-
-[class$="-type-2"] {
-  grid-template: var(--grid-container-type-2);
-}
-
-[class$="-type-3"] {
-  grid-template: var(--grid-container-type-3);
 }
 
 .information-container {
@@ -88,30 +77,30 @@ span.secondary {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: var(--spacing-normal);
 	padding-block: var(--spacing-normal);
 	padding-inline: var(--spacing-normal);
+	padding: var(--spacing-normal);
 }
 
 .information {
 	width: 75%;
-	margin: 0 0 var(--spacing-small) 0;
 	margin-block: 0 var(--spacing-small);
+	margin: 0 0 var(--spacing-small) 0;
 	text-align: right;
 }
 
 .information:last-of-type {
-	margin-bottom: 0;
 	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 .skills-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 var(--spacing-normal);
 	padding-block: 0;
 	padding-inline: var(--spacing-normal);
+	padding: 0 var(--spacing-normal);
 }
 
 .languages-container {
@@ -119,9 +108,9 @@ span.secondary {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 0 var(--spacing-normal);
 	padding-block: 0;
 	padding-inline: var(--spacing-normal);
+	padding: 0 var(--spacing-normal);
 }
 
 .language {
@@ -129,14 +118,14 @@ span.secondary {
 	align-items: center;
 	justify-content: center;
 	width: calc(100% - (2 * var(--spacing-extra-large)));
-	margin: 0 var(--spacing-extra-large) var(--spacing-small) var(--spacing-extra-large);
 	margin-block: 0 var(--spacing-small);
 	margin-inline: var(--spacing-extra-large);
+	margin: 0 var(--spacing-extra-large) var(--spacing-small) var(--spacing-extra-large);
 }
 
 .language:last-of-type {
-	margin-bottom: 0;
 	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 .language-name,
@@ -153,20 +142,20 @@ span.secondary {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: var(--spacing-normal);
 	padding-block: var(--spacing-normal);
 	padding-inline: var(--spacing-normal);
+	padding: var(--spacing-normal);
 }
 
 .education {
 	width: calc(100% - (2 * var(--spacing-normal)));
-	margin: 0 0 var(--spacing-small) 0;
 	margin-block: 0 var(--spacing-small);
+	margin: 0 0 var(--spacing-small) 0;
 }
 
 .education:last-of-type {
-	margin-bottom: 0;
 	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 .excerpt-container {
@@ -174,18 +163,18 @@ span.secondary {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 0 var(--spacing-normal);
-	padding-inline: var(--spacing-normal);
+	padding-inline: var(--spacing-large);
+	padding: 0 var(--spacing-large);
 }
 
 .excerpt {
-	margin: 0 0 var(--spacing-small) 0;
 	margin-block: 0 var(--spacing-small);
+	margin: 0 0 var(--spacing-small) 0;
 }
 
 .excerpt:last-of-type {
-	margin-bottom: 0;
 	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 .name-container {
@@ -202,19 +191,17 @@ span.secondary {
 .courses-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
-	padding: var(--spacing-normal);
 	padding-block: var(--spacing-normal);
 	padding-inline: var(--spacing-normal);
-	text-align: center;
+	padding: var(--spacing-normal);
 }
 
 .course {
-	width: 75%;
-	text-align: center;
-	margin: 0 0 var(--spacing-small) 0;
 	margin-block: 0 var(--spacing-small);
+	margin-inline: var(--spacing-extra-large);
+	margin: 0 var(--spacing-extra-large) var(--spacing-small) var(--spacing-extra-large);
 }
 
 .course:last-of-type {
@@ -227,8 +214,8 @@ span.secondary {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: var(--spacing-small) 0;
 	padding-block: var(--spacing-small);
+	padding: var(--spacing-small) 0;
 }
 
 .job {
@@ -236,18 +223,18 @@ span.secondary {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	width: 75%;
-	margin: 0 0 var(--spacing-normal) 0;
+	width: calc(100% - (2 * var(--spacing-extra-large)));
 	margin-block: 0 var(--spacing-normal);
+	margin: 0 0 var(--spacing-normal) 0;
 }
 
 .job:last-of-type {
-	margin-bottom: 0;
 	margin-block-end: 0;
+	margin-bottom: 0;
 }
 
 .job-name,
 .job-position {
-	margin: 0 0 var(--spacing-normal) 0;
 	margin-block: 0 var(--spacing-normal);
+	margin: 0 0 var(--spacing-normal) 0;
 }

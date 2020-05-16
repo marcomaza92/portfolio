@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Exotic CVs",
+  "main": "index.js",
+  "scripts": {
+		"build": "sass ./scss/index.scss index.css",
+		"watch": "sass --watch ./scss/index.scss index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@personal.gitlab.com:marcomaza92/portfolio.git"
+  },
+  "keywords": [
+    "CVs",
+    "Developer",
+    "Sass",
+    "CSS"
+  ],
+  "author": "Marco Maza",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.26.3"
+  }
+}
